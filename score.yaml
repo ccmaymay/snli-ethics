@@ -1,0 +1,22 @@
+#* means idea from https://arxiv.org/pdf/1608.07187v2.pdf
+gender/salad:
+    x:
+        - salad
+    y:
+        - woman
+        - man
+
+# gender and work/career
+gender/work:
+    x:
+        - work
+    y:
+        - woman
+        - man
+gender/career: #*
+    x:
+        - career
+        - executive
+    y:
+        - woman
+        - man

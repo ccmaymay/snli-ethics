@@ -1,0 +1,437 @@
+gender:
+    x:
+        - woman
+        - man
+
+        - women
+        - men
+
+        - girl
+        - boy
+
+        - girls
+        - boys
+
+        - she
+        - he
+
+        - her
+        - him
+        - his
+
+        - female
+        - male
+
+        - mother
+        - father
+
+        - sister
+        - brother
+
+        - daughter
+        - son
+
+        - feminine
+        - masculine
+        - androgenous
+
+        - trans
+        - transgender
+        - transsexual
+        - nonbinary
+        - non-binary
+        - two-spirit
+        - hijra
+        - queer
+        - genderqueer
+
+race-ethnicity:
+    x:
+        - black person
+        - asian person
+        - hispanic person
+        - white person
+        - african person
+        - asian person
+        - european person
+        - australian person
+        - south american person
+
+        - black people
+        - asian people
+        - hispanic people
+        - white people
+        - african people
+        - asian people
+        - european people
+        - australian people
+        - south american people
+
+        - black woman
+        - asian woman
+        - hispanic woman
+        - white woman
+        - african woman
+        - asian woman
+        - european woman
+        - australian woman
+        - south american woman
+
+        - black women
+        - asian women
+        - hispanic women
+        - white women
+        - african women
+        - asian women
+        - european women
+        - australian women
+        - south american women
+
+        - black man
+        - asian man
+        - hispanic man
+        - white man
+        - african man
+        - asian man
+        - european man
+        - australian man
+        - south american man
+
+        - black men
+        - asian men
+        - hispanic men
+        - white men
+        - african men
+        - asian men
+        - european men
+        - australian men
+        - south american men
+
+        - hispanic
+        - latino
+        - latina
+        - caucasian
+
+        - african american
+        - african americans
+
+        - asian american
+        - asian americans
+
+        - hispanic american
+        - hispanic americans
+
+        - mexican american
+        - mexican americans
+
+        - chinese american
+        - chinese americans
+
+        - japanese american
+        - japanese americans
+
+        - korean american
+        - korean americans
+
+        - indian american
+        - indian americans
+
+        - native american
+        - native americans
+
+        - american indian
+        - american indians
+
+        - african
+        - africans
+        - north african
+        - north africans
+        - west african
+        - west africans
+        - south african
+        - south africans
+        - middle eastern
+        - middle-eastern
+        - australian
+        - australians
+        - asian
+        - asians
+        - european
+        - europeans
+        - east european
+        - east europeans
+        - eastern european
+        - eastern europeans
+        - south asian
+        - south asians
+        - southeast asian
+        - southeast asians
+        - east asian
+        - east asians
+        - south american
+        - south americans
+        - central american
+        - central americans
+        - north american
+        - north americans
+        - latin american
+        - latin americans
+
+nationality:
+    x:
+        - chinese #1164
+        - indian #1237
+        - american #3005
+        - indonesian #11
+        - brazilian #51
+        - pakistani #18
+        - bangladeshi #0
+        - russian #63
+        - nigerian #14
+        - japanese #465
+        - mexican #298
+        - filipino #4
+        - vietnamese #34
+        - german #487
+        - egyptian #22
+        - ethiopian #2
+        - turkish #7
+        - iranian #0
+        - thai #82
+        - congolese #0
+        - french #253
+        - british #156
+        - italian #175
+        - korean #107
+        - burmese #0
+        - canadian #147
+        - australian #31
+        - spanish #194
+        - mexican #298
+        - dutch #13 ...double dutch?
+        - swiss #30 ...army knife?
+        - saudi #3
+        - argentinian #4
+        - taiwanese #3
+        - swedish #17 ...fish?
+        - belgian #1
+        - polish #194 ...nail/shoe polish?
+        - israeli #49, count
+        - irish #119, count
+        - south african #12, count
+        - greek #43, count
+        - ukrainian #12, count
+        - jamaican #12, count
+        - mongolian #42, count
+        - armenian #19, count
+        - nigerian #14, count
+
+        - chinese woman #1164
+        - indian woman #1237
+        - american woman #3005
+        - indonesian woman #11
+        - brazilian woman #51
+        - pakistani woman #18
+        - bangladeshi woman #0
+        - russian woman #63
+        - nigerian woman #14
+        - japanese woman #465
+        - mexican woman #298
+        - filipino woman #4
+        - vietnamese woman #34
+        - german woman #487
+        - egyptian woman #22
+        - ethiopian woman #2
+        - turkish woman #7
+        - iranian woman #0
+        - thai woman #82
+        - congolese woman #0
+        - french woman #253
+        - british woman #156
+        - italian woman #175
+        - korean woman #107
+        - burmese woman #0
+        - canadian woman #147
+        - australian woman #31
+        - spanish woman #194
+        - mexican woman #298
+        - dutch woman #13 ...double dutch?
+        - swiss woman #30 ...army knife?
+        - saudi woman #3
+        - argentinian woman #4
+        - taiwanese woman #3
+        - swedish woman #17 ...fish?
+        - belgian woman #1
+        - polish woman #194 ...nail/shoe polish?
+        - israeli woman #49, count
+        - irish woman #119, count
+        - south african man #12, count
+        - greek woman #43, count
+        - ukrainian woman #12, count
+        - jamaican woman #12, count
+        - mongolian woman #42, count
+        - armenian woman #19, count
+        - nigerian woman #14, count
+
+        - chinese man #1164
+        - indian man #1237
+        - american man #3005
+        - indonesian man #11
+        - brazilian man #51
+        - pakistani man #18
+        - bangladeshi man #0
+        - russian man #63
+        - nigerian man #14
+        - japanese man #465
+        - mexican man #298
+        - filipino man #4
+        - vietnamese man #34
+        - german man #487
+        - egyptian man #22
+        - ethiopian man #2
+        - turkish man #7
+        - iranian man #0
+        - thai man #82
+        - congolese man #0
+        - french man #253
+        - british man #156
+        - italian man #175
+        - korean man #107
+        - burmese man #0
+        - canadian man #147
+        - australian man #31
+        - spanish man #194
+        - mexican man #298
+        - dutch man #13 ...double dutch?
+        - swiss man #30 ...army knife?
+        - saudi man #3
+        - argentinian man #4
+        - taiwanese man #3
+        - swedish man #17 ...fish?
+        - belgian man #1
+        - polish man #194 ...nail/shoe polish?
+        - israeli man #49, count
+        - irish man #119, count
+        - south african man #12, count
+        - greek man #43, count
+        - ukrainian man #12, count
+        - jamaican man #12, count
+        - mongolian man #42, count
+        - armenian man #19, count
+        - nigerian man #14, count
+
+pregnancy:
+    x:
+        - pregnant
+        - pregnant woman
+        - maternity
+        - paternity
+
+veteran:
+    x:
+        - veteran
+        - veterans
+        - veteran woman
+        - veteran man
+
+disability:
+    x:
+        - disability
+        - disabled person
+        - disabled woman
+        - disabled man
+        - handicap
+        - handicapped
+        - handicapped person
+        - handicapped woman
+        - handicapped man
+        - down syndrome
+        - klinefelter's syndrome
+        - fragile x
+        - neurofibromatosis
+        - congenital hypothyroidism
+        - williams syndrome
+        - phenylketonuria
+        - pku
+        - prader-willi syndrome
+        - mentally
+        - mentally disabled
+        - mentally handicapped
+        - mental disability
+        - intellectually disabled
+        - intellectually handicapped
+        - intellectual disability
+        - autistic
+        - autism
+
+sexual_orientation:
+    x:
+        - lesbian
+        - lesbians
+        - lesbian woman
+        - gay
+        - gay man
+        - bisexual
+        - pansexual
+        - asexual
+        - queer
+        - straight
+        - straight woman
+        - straight man
+
+religion:
+    x:
+        - muslim
+        - christian
+        - jew
+        - jewish
+        - sikh
+        - buddhist
+        - hindu
+        - atheist
+
+        - muslims
+        - christians
+        - jews
+        - sikhs
+        - buddhists
+        - hindus
+        - atheists
+
+        - muslim woman
+        - christian woman
+        - jewish woman
+        - sikh woman
+        - buddhist woman
+        - hindu woman
+        - atheist woman
+
+        - muslim man
+        - christian man
+        - jew man
+        - sikh man
+        - buddhist man
+        - hindu man
+        - atheist man
+
+age:
+    x:
+        - old
+        - elderly
+        - retired
+        - teenage
+        - young
+
+        - old woman
+        - elderly woman
+        - retired woman
+        - young woman
+
+        - old man
+        - elderly man
+        - retired man
+        - young man
+
+        - senior citizen
+        - teenager
+        - teenagers

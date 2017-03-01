@@ -1,0 +1,78 @@
+identities:
+    gender:
+        keys:
+            - female
+            - male
+        groups:
+            singular noun:
+                female: woman
+                male: man
+            plural noun:
+                female: women
+                male: men
+            pronoun/obj:
+                female: her
+                male: him
+            pronoun/obj poss:
+                female: her
+                male: his
+            pronoun/subj:
+                female: she
+                male: he
+
+    race-ethnicity:
+        keys:
+            - black
+            - white
+            - hispanic
+            - asian
+        groups:
+            adjective:
+                black: black
+                white: white
+                hispanic: hispanic
+                asian: asian
+            noun/person:
+                black: black person
+                white: white person
+                hispanic: hispanic person
+                asian: asian person
+            noun/man:
+                black: black man
+                white: white man
+                hispanic: hispanic man
+                asian: asian man
+            noun/woman:
+                black: black woman
+                white: white woman
+                hispanic: hispanic woman
+                asian: asian woman
+
+concepts:
+    career:
+        - salary
+        - career
+        - business
+        - office
+        - professional
+        - management
+        - corporation
+        - executive
+
+    violence:
+        - fight
+        - fights
+        - gun
+        - guns
+        - shoots
+        - attacks
+        - dangerous
+
+experiments:
+    - identity: gender
+      concept: career
+      prediction: male
+
+    - identity: race-ethnicity
+      concept: violence
+      prediction: black

@@ -1,0 +1,5 @@
+humanfriendly
+PyYAML
+psutil
+numpy
+scipy

@@ -1,0 +1,10 @@
+.*.swp
+.*.swo
+*~
+*.pyc
+__MACOSX/
+/snli_cooccur_loop_include.bash
+/snli_query_loop_include.bash
+/snli_1.0.zip
+/snli_1.0/
+/.tox/

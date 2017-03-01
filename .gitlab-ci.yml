@@ -1,0 +1,9 @@
+build-test:
+  before_script:
+    - docker info
+  script:
+    - docker build -t snli-ethics .
+    - docker run --rm snli-ethics tox
+    - docker run --rm snli-ethics bash integration-tests.bash
+  tags:
+    - shell
