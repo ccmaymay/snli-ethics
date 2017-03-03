@@ -1,5 +1,7 @@
 # Co-occurrence computation for SNLI
 
+[![Build Status](https://travis-ci.org/cjmay/snli-ethics.svg?branch=master)](https://travis-ci.org/cjmay/snli-ethics)
+   
 This repository contains the code for the 2017 paper
 "[Social Bias in Elicited Natural Language Inferences](http://www.ethicsinnlp.org/workshop/pdf/EthNLP09.pdf)"
 by Rachel Rudinger, Chandler May, and Benjamin Van Durme.
