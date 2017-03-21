@@ -6,6 +6,7 @@ from heapq import nlargest
 from itertools import product
 from functools import partial
 from contextlib import contextmanager
+from csv import DictWriter
 import logging
 import cPickle as pickle
 import sys
@@ -262,6 +263,46 @@ def write_top_y_tex_batch_yaml(score_func, output_file, counts, queries_path,
             output_file.write(' \\\\\n')
 
 
+def write_top_y_csv_batch_yaml(score_func, output_file, counts,
+                               queries_path, *args, **kwargs):
+    '''
+    Load top-y queries from the YAML specification in the file at
+    queries_path and execute them using counts (an instance of
+    CooccurrenceCounts), passing score_func, args, and kwargs to top_y,
+    writing query, x, y, score tuples as CSV to output_file.
+    '''
+    with open(queries_path) as f:
+        queries = yaml.load(f)
+
+    filter_y_kwargs = dict((k, v) for (k, v) in kwargs.items() if k != 'k')
+    x_ngram_y_ngram_pairs = []
+    for (query_name, query) in queries.items():
+        for x in query['x']:
+            x_ngram = parse_ngram(x)
+            x_ngram_y_ngram_pairs.extend([
+                (x_ngram, y_ngram) for y_ngram in
+                filter_y(counts, x_ngram, *args, **filter_y_kwargs)
+            ])
+
+    writer = DictWriter(output_file, ('query', 'x', 'y', 'score'))
+    writer.writeheader()
+    for (query_name, query) in queries.items():
+        for x in query['x']:
+            x_ngram = parse_ngram(x)
+            y_ngram_score_pairs = [
+                (y_ngram, score)
+                for (y_ngram, score)
+                in top_y(score_func, counts, x_ngram, *args, **kwargs)
+                if score > 0
+            ]
+            for (y_ngram, score) in y_ngram_score_pairs:
+                writer.writerow(dict(
+                    query=query_name,
+                    x=x,
+                    y=format_ngram(y_ngram),
+                    score=score))
+
+
 def bonferroni_holm_g_test_p_values(counts, x_ngram_y_ngram_pairs):
     '''
     Compute Bonferroni-Holm adjusted p-values for the G-test statistics
@@ -474,6 +515,7 @@ def write_identity_concept_batch_yaml(output_file, counts,
 pmi_top_y = partial(top_y, pmi)
 pmi_top_y_batch = partial(top_y_batch, pmi)
 write_pmi_top_y_tex_batch_yaml = partial(write_top_y_tex_batch_yaml, pmi)
+write_pmi_top_y_csv_batch_yaml = partial(write_top_y_csv_batch_yaml, pmi)
 write_pmi_top_y_batch_yaml = partial(write_top_y_batch_yaml, pmi)
 write_pmi_score_batch_yaml = partial(write_score_batch_yaml, pmi)
 write_pmi_identity_concept_batch_yaml = partial(
@@ -483,6 +525,8 @@ g_test_stat_top_y = partial(top_y, g_test_stat)
 g_test_stat_top_y_batch = partial(top_y_batch, g_test_stat)
 write_g_test_stat_top_y_tex_batch_yaml = partial(
     write_top_y_tex_batch_yaml, g_test_stat)
+write_g_test_stat_top_y_csv_batch_yaml = partial(
+    write_top_y_csv_batch_yaml, g_test_stat)
 write_g_test_stat_top_y_batch_yaml = partial(
     write_top_y_batch_yaml, g_test_stat)
 write_g_test_stat_score_batch_yaml = partial(
@@ -503,7 +547,7 @@ def main():
                         help='path to pickled counts')
     parser.add_argument('queries_type', type=str,
                         choices=('score',
-                                 'top-y', 'top-y-tex',
+                                 'top-y', 'top-y-tex', 'top-y-csv',
                                  'identity-concept'),
                         help='type of queries to run')
     parser.add_argument('queries_path', type=str,
@@ -557,6 +601,15 @@ def main():
         elif args.queries_type == 'top-y-tex':
             logging.info('running top-y queries (tex output)')
             write_top_y_tex_batch_yaml(
+                args.top_y_score_func,
+                output_file,
+                counts, args.queries_path,
+                k=args.k, min_count=args.min_count,
+                filter_to_unigrams=args.filter_to_unigrams)
+
+        elif args.queries_type == 'top-y-csv':
+            logging.info('running top-y queries (csv output)')
+            write_top_y_csv_batch_yaml(
                 args.top_y_score_func,
                 output_file,
                 counts, args.queries_path,
