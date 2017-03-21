@@ -575,7 +575,7 @@ def main():
     if args.output_path == '-':
         @contextmanager
         def _open_output_file():
-            return sys.stdout
+            yield sys.stdout
     else:
         def _open_output_file():
             mkdirp_parent(args.output_path)
