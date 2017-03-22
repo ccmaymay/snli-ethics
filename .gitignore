@@ -6,5 +6,7 @@ __MACOSX/
 /snli_cooccur_loop_include.bash
 /snli_query_loop_include.bash
 /snli_1.0.zip
-/snli_1.0/
+/snli_1.0
 /.tox/
+*.csv
+*.png
