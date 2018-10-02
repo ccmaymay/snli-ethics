@@ -8,6 +8,10 @@ by Rachel Rudinger, Chandler May, and Benjamin Van Durme.
 Rachel Rudinger and Chandler May contributed to this code, which is
 released under the two-clause BSD license.
 
+### Errata
+
+In the definition of the likelihood ratio Λ(C') (last equation on the second page, or page 75 in the proceedings), the summations [should be products](https://en.wikipedia.org/wiki/G-test#Derivation).  The code and results use the correct definition.
+
 ## Prerequisites
 
 Install dependencies with:
