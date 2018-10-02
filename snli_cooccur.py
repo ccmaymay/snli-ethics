@@ -61,7 +61,7 @@ def resource_usage_str():
             format_size(mem_info.rss),
             format_size(mem_info.vms)
         )
-    except:
+    except Exception:
         return 'mem used: ? res, ? virt (pip install psutil)'
 
 
