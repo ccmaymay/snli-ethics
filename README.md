@@ -8,12 +8,6 @@ by Rachel Rudinger, Chandler May, and Benjamin Van Durme.
 Rachel Rudinger and Chandler May contributed to this code, which is
 released under the two-clause BSD license.
 
-### Errata
-
-In the definition of the likelihood ratio Λ(C') (last equation on the second page, or page 75 in the proceedings), the summations [should be products](https://en.wikipedia.org/wiki/G-test#Derivation).  The code and results use the correct definition.
-
-The implementation of the Holm-Bonferroni method has a bug:  Suppose m hypotheses are tested and ordered by their p-values, from smallest to largest.  In the implementation all hypotheses with p-values satisfying p ≤ α/(m + 1 - k) are rejected (where α is the significance level and k is the rank of the original p-value).  However, only the first K - 1 hypotheses satisfying that inequality, such that hypothesis K does not satisfy it, [should be rejected](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method#Formulation).  Our implementation may falsely reject hypotheses after hypothesis K if the p-values are sufficiently uniform.
-
 ## Prerequisites
 
 Install dependencies with:
@@ -121,3 +115,9 @@ output_ext=.txt
 input_dir=snli_stats
 input_paths=`find "$input_dir" -type f -name '*.pkl'`
 ```
+
+## Errata
+
+In the definition of the likelihood ratio Λ(C') in the paper (last equation on the second page, or page 75 in the proceedings), the summations [should be products](https://en.wikipedia.org/wiki/G-test#Derivation).  The code and results use the correct definition.
+
+The implementation of the Holm-Bonferroni method has a bug:  Suppose m hypotheses are tested and ordered by their p-values, from smallest to largest.  In the implementation all hypotheses with p-values satisfying p ≤ α/(m + 1 - k) are rejected (where α is the significance level and k is the rank of the original p-value).  However, only the first K - 1 hypotheses satisfying that inequality, such that hypothesis K does not satisfy it, [should be rejected](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method#Formulation).  Our implementation may falsely reject hypotheses after hypothesis K if the p-values are sufficiently uniform.
