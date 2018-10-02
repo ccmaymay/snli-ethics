@@ -58,9 +58,8 @@ def g_test_obs_table(counts, x, y):
     >>> c.increment('dog', 'ran')
     >>> c.increment('cat', 'ran')
     >>> c.increment('fish', 'ran')
-    >>> g_test_obs_table(c, 'the', 'dog')
-    array([[1, 0],
-           [2, 3]])
+    >>> g_test_obs_table(c, 'the', 'dog').tolist()
+    [[1, 0], [2, 3]]
     '''
     xy_count = counts.xy[(x, y)]
     x_count = counts.x[x]
@@ -78,9 +77,8 @@ def g_test_exp_table(obs_table):
     the corresponding 2 x 2 contingency table of observed counts.
 
     >>> g_test_exp_table(np.array([[3, 2],
-    ...                            [1, 10]]))
-    array([[ 1.25,  3.75],
-           [ 2.75,  8.25]])
+    ...                            [1, 10]])).tolist()
+    [[1.25, 3.75], [2.75, 8.25]]
     '''
     return np.outer(
         np.sum(obs_table, axis=1),  # row sums
