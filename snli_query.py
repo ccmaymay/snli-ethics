@@ -316,7 +316,7 @@ def bonferroni_holm_g_test_p_values(counts, x_ngram_y_ngram_pairs):
             )
             for (x_ngram, y_ngram) in x_ngram_y_ngram_pairs
         ],
-        key=lambda p: p[1])
+        key=lambda p: p[2])
 
     group_p_values = dict()
     num_tests = len(xyp_triples)
