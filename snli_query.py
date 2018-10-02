@@ -318,12 +318,15 @@ def bonferroni_holm_g_test_p_values(counts, x_ngram_y_ngram_pairs):
         ],
         key=lambda p: p[2])
 
+    min_alpha = None
     group_p_values = dict()
     num_tests = len(xyp_triples)
     for (test_num, (x_ngram, y_ngram, p_value)) in enumerate(xyp_triples):
-        # reject at level alpha if p < alpha / (m + 1 - k)
-        # where m is the number of tests and k is the 1-based index
-        group_p_values[(x_ngram, y_ngram)] = p_value * (num_tests - test_num)
+        # reject at level alpha if p <= alpha / (m + 1 - i) for all i up
+        # to k where m is the number of tests and k is the 1-based index
+        alpha = p_value * (num_tests - test_num)
+        min_alpha = alpha if min_alpha is None else max(alpha, min_alpha)
+        group_p_values[(x_ngram, y_ngram)] = min_alpha
 
     return group_p_values
 
